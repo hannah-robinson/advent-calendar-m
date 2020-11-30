@@ -9,6 +9,10 @@ body {
   color: white;
 }
 
+a {
+  color: white;
+}
+
 .container {
   height: 90vh;
   max-width: 1280px;
@@ -31,7 +35,7 @@ body {
 }
 
 .image {
-  background-image: url(./images/advent-m-1.jpg);
+  background-image: none;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -45,11 +49,12 @@ body {
   font-size: 50px; 
 }
 
-/* .text {
-  height: 100%;
+.text {
+  /* height: 100%;
   width: 100%;
-  padding-top: 10px;
-} */
+  padding: 10px; */
+  font-size: 50px;
+}
 
 .btn-start {
   margin: 15px auto;
