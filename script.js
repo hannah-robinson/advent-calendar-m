@@ -18,14 +18,6 @@ const openDoor = (imagePath, dayUrlPath, event) => {
   
   console.log(dayUrlPath);
   console.log(imagePath);
-
-  // const calendarDoorPlayBtn = document.createElement("div");
-  // calendarDoorPlayBtn.classList.add("play-btn");
-  // calendarDoorPlayBtn.innerHTML = `<a href="${dayUrlPath}" target=”_blank” ><i class="far fa-play-circle"></i></a>`;
-  // event.target.parentNode.appendChild(calendarDoorPlayBtn);
-  // event.target.innerHTML.add(`<a href="${dayUrlPath}" target=”_blank” ><i class="far fa-play-circle"></i></a>`);
-  // event.target.style.opacity = "100";
-  // event.target.style.backgroundColor = none;
 }
 
 const createCalendar = () => {
