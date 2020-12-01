@@ -42,7 +42,6 @@ a {
   align-items: center;
   justify-content: center;
   border: 2px solid #405b17;
-  /* border: 2px solid #503E1F; */
 }
 
 .number {
@@ -54,8 +53,9 @@ a {
 }
 
 .play-btn {
-  color: #405b17;
+  color: white;
   font-size: 50px; 
+  /* transition: opacity 2.5s; */
 }
 
 .btn-start {
