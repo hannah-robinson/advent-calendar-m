@@ -49,13 +49,13 @@ a {
   width: 100%;
   padding: 10px;
   font-size: 25px;
-  transition: opacity 2.5s;
+  transition: opacity 2s;
 }
 
 .play-btn {
   color: white;
   font-size: 50px; 
-  /* transition: opacity 2.5s; */
+  transition: opacity 2s;
 }
 
 .btn-start {

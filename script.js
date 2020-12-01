@@ -7,12 +7,15 @@ const openDoor = (imagePath, dayUrlPath, event) => {
   event.target.parentNode.style.backgroundImage = `url(${imagePath})`;
   event.target.style.opacity = "0";
   event.target.style.backgroundColor = "#503E1F";
-  event.target.classList.remove("number")
-  event.target.classList.add("play-btn")
-  event.target.innerHTML = `<a href=${dayUrlPath} target=”_blank” ><i class="far fa-play-circle"></i></a>`;
-  event.target.style.opacity = "100";
-  event.target.style.backgroundColor = '';
-  event.target.removeEventListener("click", openDoor);
+  setTimeout(() => {
+    event.target.classList.remove("number")
+    event.target.classList.add("play-btn")
+    event.target.innerHTML = `<a href=${dayUrlPath} target=”_blank” ><i class="far fa-play-circle"></i></a>`;
+    event.target.style.opacity = "100";
+    event.target.style.backgroundColor = '';
+    event.target.removeEventListener("click", openDoor);
+  }, 2000);
+  
   console.log(dayUrlPath);
   console.log(imagePath);
 
@@ -44,7 +47,7 @@ const createCalendar = () => {
       1: "https://www.youtube.com/watch?v=_CeY0VdhXK8",
       2: "https://www.nypl.org/blog/2019/12/19/listen-neil-gaiman-reads-christmas-carol",
     };
-    
+
     let dayImagePath = `./images/advent-m-${dayNumber}.jpg`;
     let dayUrlPath = urlPaths[dayNumber];
     
