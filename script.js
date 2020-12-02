@@ -38,6 +38,8 @@ const createCalendar = () => {
     const urlPaths = {
       1: "https://www.youtube.com/watch?v=_CeY0VdhXK8",
       2: "https://www.nypl.org/blog/2019/12/19/listen-neil-gaiman-reads-christmas-carol",
+      3: "https://www.youtube.com/watch?v=Iqqa3v4vW6w",
+      4: "https://www.youtube.com/watch?v=-cK-8jnub5Q",
     };
 
     let dayImagePath = `./images/advent-m-${dayNumber}.jpg`;
