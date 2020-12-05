@@ -40,6 +40,8 @@ const createCalendar = () => {
       2: "https://www.nypl.org/blog/2019/12/19/listen-neil-gaiman-reads-christmas-carol",
       3: "https://www.youtube.com/watch?v=Iqqa3v4vW6w",
       4: "https://www.youtube.com/watch?v=-cK-8jnub5Q",
+      5: "https://www.youtube.com/watch?v=BFPf7wrLWxg",
+      6: "https://www.youtube.com/watch?v=imLja6Emezo", 
     };
 
     let dayImagePath = `./images/advent-m-${dayNumber}.jpg`;
