@@ -3,21 +3,25 @@ const calendarContainer = document.querySelector(".container")
 
 const calendarDays = 25;
 
-const openDoor = (imagePath, dayUrlPath, event) => {
-  event.target.parentNode.style.backgroundImage = `url(${imagePath})`;
-  event.target.style.opacity = "0";
-  event.target.style.backgroundColor = "#503E1F";
-  setTimeout(() => {
-    event.target.classList.remove("number")
-    event.target.classList.add("play-btn")
-    event.target.innerHTML = `<a href=${dayUrlPath} target=”_blank” ><i class="far fa-play-circle"></i></a>`;
-    event.target.style.opacity = "100";
-    event.target.style.backgroundColor = '';
-    event.target.removeEventListener("click", openDoor);
-  }, 2000);
-  
-  console.log(dayUrlPath);
-  console.log(imagePath);
+const openDoor = (dayNumber, imagePath, dayUrlPath, event) => {
+
+  let currentTime = new Date();
+  let today = currentTime.getDate();
+  if (today < dayNumber) {
+    console.log("You're too early")
+  } else {
+      event.target.parentNode.style.backgroundImage = `url(${imagePath})`;
+      event.target.style.opacity = "0";
+      event.target.style.backgroundColor = "#503E1F";
+      setTimeout(() => {
+        event.target.classList.remove("number")
+        event.target.classList.add("play-btn")
+        event.target.innerHTML = `<a href=${dayUrlPath} target=”_blank” ><i class="far fa-play-circle"></i></a>`;
+        event.target.style.opacity = "100";
+        event.target.style.backgroundColor = '';
+        event.target.removeEventListener("click", openDoor);
+      }, 2000);
+    }
 }
 
 const createCalendar = () => {
@@ -33,8 +37,6 @@ const createCalendar = () => {
     calendarDoorText.innerHTML = i + 1;
     calendarDoor.appendChild(calendarDoorText);
 
-    dayNumber = i + 1;
-
     const urlPaths = {
       1: "https://www.youtube.com/watch?v=_CeY0VdhXK8",
       2: "https://www.nypl.org/blog/2019/12/19/listen-neil-gaiman-reads-christmas-carol",
@@ -43,13 +45,15 @@ const createCalendar = () => {
       5: "https://www.youtube.com/watch?v=BFPf7wrLWxg",
       6: "https://www.youtube.com/watch?v=imLja6Emezo", 
       7: "https://www.youtube.com/watch?v=pL71KhNmnls",
+      8: "https://www.youtube.com/watch?v=Biu8Ycz3X0M",
     };
-
+    
+    let dayNumber = i + 1;
     let dayImagePath = `./images/advent-m-${dayNumber}.jpg`;
     let dayUrlPath = urlPaths[dayNumber];
     
 
-    calendarDoorText.addEventListener("click", openDoor.bind(null, dayImagePath, dayUrlPath), {once:true});
+    calendarDoorText.addEventListener("click", openDoor.bind(null, dayNumber, dayImagePath, dayUrlPath), {once:true});
   }
 }
 
