@@ -19,7 +19,6 @@ const openDoor = (dayNumber, imagePath, dayUrlPath, event) => {
         event.target.innerHTML = `<a href=${dayUrlPath} target=”_blank” ><i class="far fa-play-circle"></i></a>`;
         event.target.style.opacity = "100";
         event.target.style.backgroundColor = '';
-        event.target.removeEventListener("click", openDoor);
       }, 2000);
     }
 }
@@ -54,9 +53,8 @@ const createCalendar = () => {
     let dayNumber = i + 1;
     let dayImagePath = `./images/advent-m-${dayNumber}.jpg`;
     let dayUrlPath = urlPaths[dayNumber];
-    
 
-    calendarDoorText.addEventListener("click", openDoor.bind(null, dayNumber, dayImagePath, dayUrlPath), {once:true});
+    calendarDoorText.addEventListener("click", openDoor.bind(null, dayNumber, dayImagePath, dayUrlPath), {once: true});
   }
 }
 
