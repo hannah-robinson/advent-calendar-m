@@ -24,16 +24,18 @@ const openDoor = (dayNumber, imagePath, dayUrlPath, event) => {
 }
 
 const createCalendar = () => {
-  for(let i = 0; i < calendarDays; i++) {
+  for(let i = 1; i <= calendarDays; i++) {
+    let dayNumber = i;
+
     const calendarDoor = document.createElement("div");
     const calendarDoorText = document.createElement("div");
 
     calendarDoor.classList.add("image")
-    calendarDoor.style.gridArea = "door" + (i + 1);
+    calendarDoor.style.gridArea = "door" + (dayNumber);
     calendarContainer.appendChild(calendarDoor);
 
     calendarDoorText.classList.add("number");
-    calendarDoorText.innerHTML = i + 1;
+    calendarDoorText.innerHTML = dayNumber;
     calendarDoor.appendChild(calendarDoorText);
 
     const urlPaths = {
@@ -50,7 +52,6 @@ const createCalendar = () => {
       11: "https://www.youtube.com/watch?v=jofNR_WkoCE",
     };
     
-    let dayNumber = i + 1;
     let dayImagePath = `./images/advent-m-${dayNumber}.jpg`;
     let dayUrlPath = urlPaths[dayNumber];
 
