@@ -24,6 +24,52 @@ const openDoor = (event) => {
   if (today < event.target.parentNode.id) {
     console.log("You're too early")
     console.log(event.target.parentNode.id)
+
+    const modal = document.createElement("div");
+    const modalContainer = document.createElement("div");
+    const modalContent = document.createElement("div");
+    const closeBtn = document.createElement("span"); 
+    const textBackground = document.createElement("div");
+
+    modal.classList.add("modal")
+    document.body.appendChild(modal);
+    modalContainer.classList.add("modal-container")
+    modal.appendChild(modalContainer)
+    modalContent.classList.add("modal-content")
+    modalContainer.appendChild(modalContent)
+    closeBtn.classList.add("closeBtn")
+    closeBtn.innerHTML = "&times;"
+    modalContent.appendChild(closeBtn)
+    textBackground.classList.add("text-background")
+    textBackground.innerHTML = `<p>You're too early<img class="finger" src="./images/finger.png" alt="tree"></p>`
+    modalContent.appendChild(textBackground)
+    
+    // Get random photo
+    let randomNumber = Math.floor(Math.random() * 5);
+    modalContent.style.backgroundImage = `url("./images/early-${randomNumber}.jpg")`;
+
+    // Events
+    closeBtn.addEventListener('click', closeModal);
+    document.body.addEventListener('click', outsideClick);
+
+    // Open
+    function openModal() {
+      modal.style.display = 'block';
+    }
+
+    // Close
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    // Close for outside click
+    function outsideClick(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+    openModal();
+
   // Open door
   } else {
       event.target.removeEventListener("click", openDoor);

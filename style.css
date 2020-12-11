@@ -71,4 +71,94 @@ a {
 
 .btn-start:hover {
   filter: brightness(130%);
+  cursor: pointer;
+}
+
+/* Modal for early clicks */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-container {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  resize: both;
+}
+
+.modal-content {
+  background-color: #405b17;
+  background-image: url("./images/early-1.jpg");
+  background-size: cover;
+  width: 90%;
+  min-height: 640px;
+  max-width: 960px;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+  border-radius: 100px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff
+}
+
+.text-background {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 5em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  width: 80%;
+  margin: 20px auto;
+}
+
+p {
+  line-height: 1;
+  padding: 20px;
+}
+
+/* Finger animation code */
+@keyframes finger-wagging {
+  0% { 
+    transform: rotate(-25deg); 
+} 50% { 
+    transform: rotate(25deg); 
+} 100% { 
+  transform: rotate(-25deg); 
+} 
+}
+
+/* The element to apply the animation to */
+.finger {
+  margin-bottom: -20px;
+  animation-duration: 1s;
+  animation-name: finger-wagging;
+  animation-iteration-count: infinite;
+}
+
+.closeBtn {
+  color: #ccc;
+  float: right;
+  padding-right: 60px;
+  padding-top: 30px;
+  font-size: 40px;
+  line-height: 1.6;
+}
+
+.closeBtn:hover, 
+.closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
