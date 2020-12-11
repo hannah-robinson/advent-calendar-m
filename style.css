@@ -34,7 +34,7 @@ a {
   "door21 door22 door23 door24 door25"
 }
 
-.image {
+.door {
   background-image: none;
   background-size: cover;
   background-position: center;
@@ -49,13 +49,13 @@ a {
   width: 100%;
   padding: 10px;
   font-size: 25px;
-  transition: opacity 2s;
+  transition: opacity 1.5s;
 }
 
 .play-btn {
   color: white;
   font-size: 50px; 
-  transition: opacity 2s;
+  transition: opacity 1.5s;
 }
 
 .btn-start {
