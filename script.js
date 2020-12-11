@@ -22,50 +22,47 @@ const openDoor = (event) => {
   let currentTime = new Date();
   let today = currentTime.getDate();
   if (today < event.target.parentNode.id) {
-    console.log("You're too early")
-    console.log(event.target.parentNode.id)
-
     const modal = document.createElement("div");
     const modalContainer = document.createElement("div");
     const modalContent = document.createElement("div");
     const closeBtn = document.createElement("span"); 
     const textBackground = document.createElement("div");
 
-    modal.classList.add("modal")
+    modal.classList.add("modal");
     document.body.appendChild(modal);
-    modalContainer.classList.add("modal-container")
-    modal.appendChild(modalContainer)
-    modalContent.classList.add("modal-content")
-    modalContainer.appendChild(modalContent)
-    closeBtn.classList.add("closeBtn")
-    closeBtn.innerHTML = "&times;"
-    modalContent.appendChild(closeBtn)
-    textBackground.classList.add("text-background")
-    textBackground.innerHTML = `<p>You're too early<img class="finger" src="./images/finger.png" alt="tree"></p>`
-    modalContent.appendChild(textBackground)
+    modalContainer.classList.add("modal-container");
+    modal.appendChild(modalContainer);
+    modalContent.classList.add("modal-content");
+    modalContainer.appendChild(modalContent);
+    closeBtn.classList.add("closeBtn");
+    closeBtn.innerHTML = "&times;";
+    modalContent.appendChild(closeBtn);
+    textBackground.classList.add("text-background");
+    textBackground.innerHTML = `<p>You're too early<img class="finger" src="./images/finger.png" alt="tree"></p>`;
+    modalContent.appendChild(textBackground);
     
     // Get random photo
     let randomNumber = Math.floor(Math.random() * 5);
     modalContent.style.backgroundImage = `url("./images/early-${randomNumber}.jpg")`;
 
     // Events
-    closeBtn.addEventListener('click', closeModal);
-    document.body.addEventListener('click', outsideClick);
+    closeBtn.addEventListener("click", closeModal);
+    modalContainer.addEventListener("click", outsideClick);
 
     // Open
     function openModal() {
-      modal.style.display = 'block';
+      modal.style.display = "block";
     }
 
     // Close
     function closeModal() {
-      modal.style.display = 'none';
+      modal.style.display = "none";
     }
 
     // Close for outside click
     function outsideClick(event) {
-      if (event.target == modal) {
-        modal.style.display = 'none';
+      if (event.target == modalContainer) {
+        modal.style.display = "none";
       }
     }
     openModal();
@@ -76,8 +73,8 @@ const openDoor = (event) => {
       event.target.style.opacity = "0";
       event.target.style.backgroundColor = "#503E1F";
       setTimeout(() => {
-        event.target.classList.remove("number")
-        event.target.classList.add("play-btn")
+        event.target.classList.remove("number");
+        event.target.classList.add("play-btn");
         event.target.parentNode.style.backgroundImage = `url(./images/advent-m-${event.target.parentNode.id}.jpg)`;
         event.target.innerHTML = `<a href=${urlPaths[event.target.parentNode.id]} target=”_blank” ><i class="far fa-play-circle"></i></a>`;
         event.target.style.opacity = "100";
@@ -107,4 +104,4 @@ const createCalendar = () => {
     calendarDoorContents.addEventListener("click", openDoor);
   }
 }
-calendarButton.addEventListener("click", createCalendar)
+calendarButton.addEventListener("click", createCalendar);
