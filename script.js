@@ -15,13 +15,16 @@ const urlPaths = {
   9: "https://www.youtube.com/watch?v=gFCpf9n_LYg",
   10: "https://www.youtube.com/watch?v=HPi6kYCCVOk",
   11: "https://www.youtube.com/watch?v=jofNR_WkoCE",
+  12: "https://www.youtube.com/watch?v=-yfCo4DUc_E",
 };
 
 const openDoor = (event) => {
   // Check if door is allowed to be opened yet
   let currentTime = new Date();
   let today = currentTime.getDate();
+
   if (today < event.target.parentNode.id) {
+    // Build "You're too early" modal
     const modal = document.createElement("div");
     const modalContainer = document.createElement("div");
     const modalContent = document.createElement("div");
@@ -30,45 +33,50 @@ const openDoor = (event) => {
 
     modal.classList.add("modal");
     document.body.appendChild(modal);
+
     modalContainer.classList.add("modal-container");
     modal.appendChild(modalContainer);
+
     modalContent.classList.add("modal-content");
     modalContainer.appendChild(modalContent);
+
     closeBtn.classList.add("closeBtn");
     closeBtn.innerHTML = "&times;";
     modalContent.appendChild(closeBtn);
+
     textBackground.classList.add("text-background");
     textBackground.innerHTML = `<p>You're too early<img class="finger" src="./images/finger.png" alt="tree"></p>`;
     modalContent.appendChild(textBackground);
     
-    // Get random photo
+    // Get random dog photo for modal
     let randomNumber = Math.floor(Math.random() * 5);
     modalContent.style.backgroundImage = `url("./images/early-${randomNumber}.jpg")`;
 
-    // Events
+    // Modal events
     closeBtn.addEventListener("click", closeModal);
     modalContainer.addEventListener("click", outsideClick);
 
-    // Open
+    // Open modal
     function openModal() {
       modal.style.display = "block";
     }
 
-    // Close
+    // Close modal
     function closeModal() {
       modal.style.display = "none";
     }
 
-    // Close for outside click
+    // Close modal for outside click
     function outsideClick(event) {
       if (event.target == modalContainer) {
         modal.style.display = "none";
       }
     }
+    // Open modal
     openModal();
 
-  // Open door
   } else {
+    // Open calendar door
       event.target.removeEventListener("click", openDoor);
       event.target.style.opacity = "0";
       event.target.style.backgroundColor = "#503E1F";
@@ -83,6 +91,7 @@ const openDoor = (event) => {
     }
 }
 
+// Build calendar UI
 const createCalendar = () => {
   for(let i = 1; i <= calendarDays; i++) {
     
@@ -91,7 +100,6 @@ const createCalendar = () => {
     
     let dayNumber = i;
     
-    // Build calendar UI
     calendarDoor.id = dayNumber;
     calendarDoor.classList.add("door")
     calendarDoor.style.gridArea = "door" + (dayNumber);
