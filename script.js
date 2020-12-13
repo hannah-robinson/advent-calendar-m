@@ -16,6 +16,7 @@ const urlPaths = {
   10: "https://www.youtube.com/watch?v=HPi6kYCCVOk",
   11: "https://www.youtube.com/watch?v=jofNR_WkoCE",
   12: "https://www.youtube.com/watch?v=-yfCo4DUc_E",
+  13: "https://www.youtube.com/watch?v=4WqPGAJcp5c",
 };
 
 const openDoor = (event) => {
@@ -45,11 +46,11 @@ const openDoor = (event) => {
     modalContent.appendChild(closeBtn);
 
     textBackground.classList.add("text-background");
-    textBackground.innerHTML = `<p>You're too early<img class="finger" src="./images/finger.png" alt="tree"></p>`;
+    textBackground.innerHTML = `<p>You're too early<img class="finger" src="./images/finger.png" alt="finger wagging"></p>`;
     modalContent.appendChild(textBackground);
     
     // Get random dog photo for modal
-    let randomNumber = Math.floor(Math.random() * 5);
+    let randomNumber = Math.floor(Math.random() * 6);
     modalContent.style.backgroundImage = `url("./images/early-${randomNumber}.jpg")`;
 
     // Modal events
