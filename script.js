@@ -17,6 +17,11 @@ const urlPaths = {
   11: "https://www.youtube.com/watch?v=jofNR_WkoCE",
   12: "https://www.youtube.com/watch?v=-yfCo4DUc_E",
   13: "https://www.youtube.com/watch?v=4WqPGAJcp5c",
+  14: "https://twitter.com/AberavonRFC/status/1336747442579103748",
+  15: "https://www.youtube.com/watch?v=fP0zzKtchFQ",
+  16: "https://youtu.be/iCAZ7CeDZBg?t=160",
+  17: "https://www.youtube.com/watch?v=NqC08HbYvaw",
+  19: "https://www.youtube.com/watch?v=tMpqX8UTcEs",
 };
 
 const openDoor = (event) => {
