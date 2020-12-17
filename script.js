@@ -21,6 +21,7 @@ const urlPaths = {
   15: "https://www.youtube.com/watch?v=fP0zzKtchFQ",
   16: "https://youtu.be/iCAZ7CeDZBg?t=160",
   17: "https://www.youtube.com/watch?v=tMpqX8UTcEs",
+  18: "https://www.youtube.com/watch?v=CZ7U3Cu4Mr4",
   20: "https://www.youtube.com/watch?v=NqC08HbYvaw",
 };
 
