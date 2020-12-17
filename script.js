@@ -20,8 +20,8 @@ const urlPaths = {
   14: "https://twitter.com/AberavonRFC/status/1336747442579103748",
   15: "https://www.youtube.com/watch?v=fP0zzKtchFQ",
   16: "https://youtu.be/iCAZ7CeDZBg?t=160",
-  17: "https://www.youtube.com/watch?v=NqC08HbYvaw",
-  19: "https://www.youtube.com/watch?v=tMpqX8UTcEs",
+  17: "https://www.youtube.com/watch?v=tMpqX8UTcEs",
+  20: "https://www.youtube.com/watch?v=NqC08HbYvaw",
 };
 
 const openDoor = (event) => {
