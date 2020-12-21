@@ -1,5 +1,6 @@
 const calendarButton = document.querySelector(".btn-start")
 const calendarContainer = document.querySelector(".container")
+const easterEgg = document.querySelector("#easter-egg")
 
 const calendarDays = 25;
 
@@ -124,4 +125,10 @@ const createCalendar = () => {
     calendarDoorContents.addEventListener("click", openDoor);
   }
 }
+
+function clickedEgg(event) {
+  event.target.removeEventListener("click", clickedEgg);
+  event.target.style.animation = "none";
+}
 calendarButton.addEventListener("click", createCalendar);
+easterEgg.addEventListener("click", clickedEgg);
