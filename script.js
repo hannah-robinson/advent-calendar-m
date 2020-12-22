@@ -124,6 +124,7 @@ const createCalendar = () => {
     
     calendarDoorContents.addEventListener("click", openDoor);
   }
+  calendarButton.remove();
 }
 
 function clickedEgg(event) {

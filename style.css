@@ -58,6 +58,7 @@ a {
   transition: opacity 1.5s;
 }
 
+/* Create calendar button */
 .btn-start {
   margin: 15px auto;
   display: block;
@@ -74,11 +75,11 @@ a {
   cursor: pointer;
 }
 
+/* Easter egg */
 #easter-egg {
   height: 50px;
-  position: absolute;
-  margin-left: 960px;
-  margin-top: -65px;
+  margin: 15px auto;
+  display: block;
   animation-name: wiggle;
   animation-duration: .5s;
   animation-iteration-count: infinite;
