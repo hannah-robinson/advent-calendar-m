@@ -36,7 +36,8 @@ const openDoor = (event) => {
   let currentTime = new Date();
   let today = currentTime.getDate();
 
-  if (today < event.target.parentNode.id) {
+   if (today < event.target.parentNode.id) {
+
     // Build "You're too early" modal
     const modal = document.createElement("div");
     const modalContainer = document.createElement("div");
@@ -87,8 +88,55 @@ const openDoor = (event) => {
     }
     // Open modal
     openModal();
+  // Check if today is Christmas day
+  } else if (today === 25) {
+    // Build Christmas day modal
+      const modal = document.createElement("div");
+      const modalContainer = document.createElement("div");
+      const modalContent = document.createElement("div");
+      const closeBtn = document.createElement("span"); 
+      const textBackground = document.createElement("div");
 
-  } else {
+      modal.classList.add("modal");
+      document.body.appendChild(modal);
+
+      modalContainer.classList.add("modal-container");
+      modal.appendChild(modalContainer);
+
+      modalContent.classList.add("xmas-modal-content");
+      modalContainer.appendChild(modalContent);
+
+      closeBtn.classList.add("closeBtn");
+      closeBtn.innerHTML = "&times;";
+      modalContent.appendChild(closeBtn);
+
+      textBackground.classList.add("xmas-text-background");
+      textBackground.innerHTML = "<p>Go to your computer's Desktop and click the file named M-25th.html</p>";
+      modalContent.appendChild(textBackground);
+
+      // Modal events
+      closeBtn.addEventListener("click", closeModal);
+      modalContainer.addEventListener("click", outsideClick);
+
+      // Open modal
+      function openModal() {
+        modal.style.display = "block";
+      }
+
+      // Close modal
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // Close modal for outside click
+      function outsideClick(event) {
+        if (event.target == modalContainer) {
+          modal.style.display = "none";
+        }
+      }
+      // Open modal
+      openModal();
+    } else {
     // Open calendar door
       event.target.removeEventListener("click", openDoor);
       event.target.style.opacity = "0";
