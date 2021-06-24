@@ -88,7 +88,7 @@ const openDoor = (event) => {
     // Open modal
     openModal();
   // Check if today is Christmas day
-  } else if (true) {
+  } else if (today === 25) {
     // Build Christmas day modal
       const modal = document.createElement("div");
       const modalContainer = document.createElement("div");
